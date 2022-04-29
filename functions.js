@@ -28,5 +28,8 @@ function getInfo(){
 
 function filterData(result){
   $("#commonName").text("Common Name: " + result[0].name.common);
+  $('#capital').text("Capital: " + result[0].capital[0]);
   $("#fifaInfo").text("Fifa Name: " + result[0].fifa);
+  $("#germInfo").text("Name in German: " + result[0].translations.deu.common);
+
 }
