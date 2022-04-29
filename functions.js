@@ -12,6 +12,7 @@ function getInfo(){
        success : function(result){
          var newData = JSON.stringify(result,null,4);
          console.log(newData);
+         $("#countryFlag").remove();
          $("#errinfo").text("");
          filterData(result);
        },
@@ -31,5 +32,6 @@ function filterData(result){
   $('#capital').text("Capital: " + result[0].capital[0]);
   $("#fifaInfo").text("Fifa Name: " + result[0].fifa);
   $("#germInfo").text("Name in German: " + result[0].translations.deu.common);
-
+  var flag = $(`<img src ="${result[0].flags.png}" alt="countries flag" id="countryFlag" class="info">`);
+  $("#form").append(flag);
 }
