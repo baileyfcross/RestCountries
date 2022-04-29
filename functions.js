@@ -8,9 +8,10 @@ function getInfo(){
        method : 'GET',
        data: data,
        success : function(result){
-         var newData = JSON.stringify(result);
-         console.log(result);
-         $("#info").text(newData);
+         var newData = JSON.stringify(result,null,4);
+         console.log(newData);
+         filterData(result)
+         //$("#info").text(result[0].fifa);
        },
        error : function(result, statut, error){
          console.log(error);
@@ -21,6 +22,7 @@ function getInfo(){
   });
 }
 
-function filterData(){
-  
+function filterData(result){
+
+  $("#info").text("Fifa Name: " + result[0].fifa);
 }
