@@ -1,28 +1,32 @@
 function getInfo(){
   var data = {};
   $(document).ready(() => {
-    var name = document.getElementById("#countryName");
+    var name = $("#countryName").val();
+    console.log(name);
     //`https://restcountries.com/v3.1/name/${name}`
+    //'https://restcountries.com/v3.1/name/USA'
     $.ajax({
-       url : 'https://restcountries.com/v3.1/name/USA',
+       url : `https://restcountries.com/v3.1/name/${name}`,
        method : 'GET',
        data: data,
        success : function(result){
          var newData = JSON.stringify(result,null,4);
          console.log(newData);
-         filterData(result)
-         //$("#info").text(result[0].fifa);
+         $("#errinfo").text("");
+         filterData(result);
        },
        error : function(result, statut, error){
          console.log(error);
          console.log(statut);
          console.log(result);
+         $(".info").text("");
+         $("#errinfo").text("Country Not Found, Try retyping or using another name");
        }
     });
   });
 }
 
 function filterData(result){
-
-  $("#info").text("Fifa Name: " + result[0].fifa);
+  $("#commonName").text("Common Name: " + result[0].name.common);
+  $("#fifaInfo").text("Fifa Name: " + result[0].fifa);
 }
