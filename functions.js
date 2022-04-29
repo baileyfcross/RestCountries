@@ -8,7 +8,9 @@ function getInfo(){
        method : 'GET',
        data: data,
        success : function(result){
-         console.log(data);
+         var newData = JSON.stringify(result);
+         console.log(result);
+         $("#info").text(newData);
        },
        error : function(result, statut, error){
          console.log(error);
@@ -17,4 +19,8 @@ function getInfo(){
        }
     });
   });
+}
+
+function filterData(){
+  
 }
