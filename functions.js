@@ -36,6 +36,7 @@ function filterData(result){
   $("#commonName").text("Common Name: " + result[0].name.common);
   $('#officalName').text("Official Name: " + result[0].name.official);
   $('#capital').text("Capital: " + result[0].capital[0]);
+  $('#pop').text("Population: " + new Intl.NumberFormat().format(result[0].population));
   $("#fifaInfo").text("Fifa Name: " + result[0].fifa);
   $("#germInfo").text("Name in German: " + result[0].translations.deu.common);
   var flag = $(`<p class ='info'>Country Flag: </p><img src ="${result[0].flags.png}" alt="countries flag" id="countryFlag" class="info">`);
