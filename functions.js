@@ -17,14 +17,14 @@ function getInfo(){
          var newData = JSON.stringify(result,null,4);
          console.log(newData);
          $("#countryFlag").remove();
+         $("#COA").remove();
          $("#errinfo").text("");
+         $(".info").text("");
          filterData(result);
        },
        error : function(result, statut, error){
-         console.log(error);
-         console.log(statut);
-         console.log(result);
          $("#countryFlag").remove();
+         $("#COA").remove();
          $(".info").text("");
          $("#errinfo").text("Country Not Found, Try retyping or using another name");
        }
@@ -34,9 +34,12 @@ function getInfo(){
 
 function filterData(result){
   $("#commonName").text("Common Name: " + result[0].name.common);
+  $('#officalName').text("Official Name: " + result[0].name.official);
   $('#capital').text("Capital: " + result[0].capital[0]);
   $("#fifaInfo").text("Fifa Name: " + result[0].fifa);
   $("#germInfo").text("Name in German: " + result[0].translations.deu.common);
-  var flag = $(`<img src ="${result[0].flags.png}" alt="countries flag" id="countryFlag" class="info">`);
+  var flag = $(`<p class ='info'>Country Flag: </p><img src ="${result[0].flags.png}" alt="countries flag" id="countryFlag" class="info">`);
   $("#form").append(flag);
+  var coa = $(`<p class ='info'>Coat of Arms: </p><img src ="${result[0].coatOfArms.png}" alt="coat of arms" id="COA" class="info">`);
+  $("#form").append(coa);
 }
