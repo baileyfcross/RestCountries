@@ -1,3 +1,7 @@
+$(document).on("keydown", "form", function(event) {
+    return event.key != "Enter";
+});
+
 function getInfo(){
   var data = {};
   $(document).ready(() => {
@@ -20,6 +24,7 @@ function getInfo(){
          console.log(error);
          console.log(statut);
          console.log(result);
+         $("#countryFlag").remove();
          $(".info").text("");
          $("#errinfo").text("Country Not Found, Try retyping or using another name");
        }
