@@ -31,7 +31,9 @@ function getInfo(){
     });
   });
 }
-
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 function filterData(result){
   $("#commonName").text("Common Name: " + result[0].name.common);
   $('#officalName').text("Official Name: " + result[0].name.official);
@@ -39,6 +41,7 @@ function filterData(result){
   $('#pop').text("Population: " + new Intl.NumberFormat().format(result[0].population));
   $("#fifaInfo").text("Fifa Name: " + result[0].fifa);
   $("#germInfo").text("Name in German: " + result[0].translations.deu.common);
+  $('#startInfo').text("Start of the Week: " + capitalizeFirstLetter(result[0].startOfWeek));
   var flag = $(`<p class ='info'>Country Flag: </p><img src ="${result[0].flags.png}" alt="countries flag" id="countryFlag" class="info">`);
   $("#form").append(flag);
   var coa = $(`<p class ='info'>Coat of Arms: </p><img src ="${result[0].coatOfArms.png}" alt="coat of arms" id="COA" class="info">`);
