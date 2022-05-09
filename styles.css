@@ -1,5 +1,6 @@
 body {
   font-family: Verdana serif;
+  margin-bottom: 10em;
 }
 
 #countryNameLabel {
@@ -23,7 +24,6 @@ body {
 }
 
 .info {
-  /*margin-right: 20px;*/
   margin: 0%;
   font-size: 22px;
 }
