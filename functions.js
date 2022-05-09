@@ -88,14 +88,14 @@ function filterData(result){
     $("#mapItems").append(map);
   }
   if(result[0].flags != null){
-    var flag = $(`<div class ="info col-6"><p class ='info'>Country Flag: </p><img src ="${result[0].flags.png}" alt="countries flag" id="countryFlag" class="info"></div>`);
+    var flag = $(`<div class ="info col-xs-8 col-lg-6"><p class ='info'>Country Flag: </p><img src ="${result[0].flags.png}" alt="countries flag" id="countryFlag" class="info"></div>`);
     $("#mapItems").append(flag);
   }
   /*
   If the Coat of Arms image is there, then add it to the page
   */
   if(result[0].coatOfArms.length != undefined || result[0].coatOfArms.png){
-    var coa = $(`<div class ='col-6'><p class ='info'>Coat of Arms: </p><img src ="${result[0].coatOfArms.png}" alt="coat of arms" id="COA" class="info"></div>`);
+    var coa = $(`<div class ='col-xs-4 col-lg-6'><p class ='info'>Coat of Arms: </p><img src ="${result[0].coatOfArms.png}" alt="coat of arms" id="COA" class="info"></div>`);
     $("#mapItems").append(coa);
   }
 }
