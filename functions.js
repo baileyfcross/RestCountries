@@ -113,16 +113,25 @@ function filterData(result){
     $('#miscInfo').append(fifaInfo);
   }
   if(result[0].translations.deu != null){
-    var germInfo = $(`<div id="germInfo" class ="info col-12"><p>Common Name in German: ${result[0].translations.deu.common}</p></div>`);
+    var germInfo = $(`<div id="germInfo" class ="info col-6"><p>Common Name in German: ${result[0].translations.deu.common}</p></div>`);
     $('#miscInfo').append(germInfo);
+
+    var offGermInfo = $(`<div id="offGermInfo" class ="info col-6"><p>Official Name in German: ${result[0].translations.deu.official}</p></div>`);
+    $('#miscInfo').append(offGermInfo);
   }
   if(result[0].translations.zho != null){
-    var zhoInfo = $(`<div id="zhoInfo" class ="info col-12"><p>Common Name in Chinese: ${result[0].translations.zho.common}</p></div>`);
+    var zhoInfo = $(`<div id="zhoInfo" class ="info col-6"><p>Common Name in Chinese: ${result[0].translations.zho.common}</p></div>`);
     $('#miscInfo').append(zhoInfo);
+
+    var offZhoInfo = $(`<div id="offZhoInfo" class ="info col-6"><p>Official Name in Chinese: ${result[0].translations.zho.official}</p></div>`);
+    $('#miscInfo').append(offZhoInfo);
   }
   if(result[0].translations.ara != null){
-    var araInfo = $(`<div id="zhoInfo" class ="info col-12"><p>Common Name in Arabic: ${result[0].translations.ara.common}</p></div>`);
+    var araInfo = $(`<div id="zhoInfo" class ="info col-6"><p>Common Name in Arabic: ${result[0].translations.ara.common}</p></div>`);
     $('#miscInfo').append(araInfo);
+
+    var offAraInfo = $(`<div id="offAraInfo" class ="info col-6"><p>Official Name in Arabic: ${result[0].translations.ara.official}</p></div>`);
+    $('#miscInfo').append(offAraInfo);
   }
   var startInfo = $(`<div id="startInfo" class ="info col-12"><p>Start of the Week: ${capitalizeFirstLetter(result[0].startOfWeek)}</p></div>`);
   $('#miscInfo').append(startInfo);
