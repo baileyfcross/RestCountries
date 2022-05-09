@@ -1,6 +1,15 @@
 body {
-  padding: 20px;
   font-family: Verdana serif;
+}
+
+#countryNameLabel {
+  font-size: 22px;
+}
+#submitBTN{
+  margin-top: 2%;
+}
+#countryName {
+  margin-left: 2%;
 }
 
 #countryFlag {
@@ -11,4 +20,10 @@ body {
   border: 1px solid black;
   max-width: 100px;
   max-height: 100px;
+}
+
+.info {
+  /*margin-right: 20px;*/
+  margin: 0%;
+  font-size: 22px;
 }

@@ -9,27 +9,48 @@
     <script type="text/javascript" src="functions.js"></script>
   </head>
   <body>
-    <h1>Restful Countries</h1>
-    <p>Type in a Country name below and see the various facts about it!</p>
-    <form id="form">
-      <label for="countryName">Country Name</label>
-      <input id="countryName" type="text" name="countryName" value="" autocomplete="off">
-      <button id="submitBTN" class="btn btn-success" type="button" name="button" onclick="getInfo()">Submit</button>
-      <div id="errinfo">
+    <div class = "container">
+      <div class="row d-flex justify-content-center">
+        <h1 id = 'header'>Restful Countries</h1>
       </div>
-      <div id="commonName" class ="info">
+      <div class="row d-flex justify-content-center">
+        <p>Type in a Country name below and see the various facts about it!</p>
       </div>
-      <div id="officalName" class ="info">
+
+      <form id="form">
+      <div class = "row d-flex justify-content-center">
+        <label id = "countryNameLabel" class="form-label" for="countryName">Country Name</label>
+        <input id="countryName" class="form-control" type="text" name="countryName" value="" autocomplete="off" placeholder="USA">
+        <button id="submitBTN" class="btn btn-success" type="button" name="button" onclick="getInfo()">Submit</button>
       </div>
-      <div id="capital" class ="info">
+      <div class="row d-flex justify-content-center">
+        <h2>==============================================================</h2>
       </div>
-      <div id="pop" class ="info">
-      </div>
-      <div id="fifaInfo" class ="info">
-      </div>
-      <div id="startInfo" class ="info">
-      </div>
-      <div id="germInfo" class ="info">
-      </div>
+        <div class="row">
+          <div class="col-12" id = 'names'>
+            <div id="errinfo">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12" id='popAndCap'>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12" id ='miscInfo'>
+          <div id="fifaInfo" class ="info">
+          </div>
+          <div id="startInfo" class ="info">
+          </div>
+          <div id="germInfo" class ="info">
+          </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12" id = "mapItems">
+          </div>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
